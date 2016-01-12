@@ -19,7 +19,7 @@ def bitfinex():
     return finexLast.json()['last_price']
 
 def main():
-       while True:
+    while True:
         huobiLTC = huobi()
         print 'huobi:',huobiLTC
         ok = okcoinCNY()
