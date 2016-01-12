@@ -1,7 +1,6 @@
 #!/usr/bin/python 2.7
 import time ,json
 import requests
-import sys
 
 def btce_ltc_usd():
     btceBtcTick = requests.get('https://btc-e.com/api/3/ticker/ltc_usd')
@@ -19,11 +18,8 @@ def bitfinex():
     finexLast = requests.get('https://api.bitfinex.com/v1/ticker/ltcusd')
     return finexLast.json()['last_price']
 
-
-
-
-if __name__ == '__main__':
-    while True:
+def main():
+       while True:
         huobiLTC = huobi()
         print 'huobi:',huobiLTC
         ok = okcoinCNY()
@@ -33,5 +29,8 @@ if __name__ == '__main__':
         bfinex = bitfinex()
         print 'finex:',bfinex
         print '----------'
+        # Time between refresh 2.5 hits huobi limit
         time.sleep(2.8)
-            #2.5 hits huobi limi
+
+if __name__ == '__main__':
+    main()
