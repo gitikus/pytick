@@ -1,1 +1,1 @@
-# ticker
+# simple crypto tickers
