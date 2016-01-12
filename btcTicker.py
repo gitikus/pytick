@@ -47,29 +47,29 @@ def convert_cny_to_usd(cny):
 
 
 def main():
-    try:
-        huobiLast = huobi()
-        huobiConverted = convert_cny_to_usd(huobiLast)
-        print 'Huobi:',huobiConverted,'| CNY:',huobiLast
-        okcny = okcoin_cny()
-        okcnyConverted = convert_cny_to_usd(okcny)
-        print 'OKcn:',okcnyConverted,'| CNY:',okcny
-        okusd = okcoin_usd()
-        print 'OKus:', okusd
-        btce_btcusd = btce_btc_usd()
-        print 'Btc-e:',btce_btcusd
-        bstamp = bitstamp()
-        print 'Bstmp:', bstamp
-        finex = bitfinex()
-        print 'Finex:', finex
-        cbase = coinbase()
-        print 'Cbase:', cbase[0][0]
-        print '-------------------'
-    except Exception ,e:
-        print '[-] ERROR = '+str(e)
-    time.sleep(4)
+    while True:
+        try:
+            huobiLast = huobi()
+            huobiConverted = convert_cny_to_usd(huobiLast)
+            print 'Huobi:',huobiConverted,'| CNY:',huobiLast
+            okcny = okcoin_cny()
+            okcnyConverted = convert_cny_to_usd(okcny)
+            print 'OKcn:',okcnyConverted,'| CNY:',okcny
+            okusd = okcoin_usd()
+            print 'OKus:', okusd
+            btce_btcusd = btce_btc_usd()
+            print 'Btc-e:',btce_btcusd
+            bstamp = bitstamp()
+            print 'Bstmp:', bstamp
+            finex = bitfinex()
+            print 'Finex:', finex
+            cbase = coinbase()
+            print 'Cbase:', cbase[0][0]
+            print '-------------------'
+        except Exception ,e:
+            print '[-] ERROR = '+str(e)
+    time.sleep(5)
 
 
 if __name__ == '__main__':
-    while True:
         main()
