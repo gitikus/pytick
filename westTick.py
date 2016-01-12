@@ -1,5 +1,4 @@
 #!/usr/bin/python 2.7
-#Shows last price from several exchanges.
 import time, json
 import requests
 
@@ -32,28 +31,25 @@ def kraken():
 #def okcoin():
 #def huobi():
   #huoTick = requests.get('http://api.huobi.com/staticmarket/detail_btc_json.js')
-  #return huoTick
 
 def main():
   try:
+    print "#####################"
+    bitfinexUSDLive = float(bitFinex())
+    print "#Bitfinex: ", round(bitfinexUSDLive, 2)
     btstampUSDLive = float(btstamp())
+    print "#Bitstamp: ", round(btstampUSDLive, 2)
     btceUSDLive = btceBU()
+    print "#Btc-e:    ", round(btceUSDLive, 2)
     #btceLTCinBTCLive = btceBL()
     coinbUSDLive = float(coinbase())
-    krakenUSDLive = float(kraken())
-    bitfinexUSDLive = float(bitFinex())
-
-    print "#####################"
-    print "#Bitfinex: ", round(bitfinexUSDLive, 2)
-    print "#Bitstamp: ", round(btstampUSDLive, 2)
-    print "#Btc-e:    ", round(btceUSDLive, 2)
     print "#Coinbase: ", round(coinbUSDLive, 2)
+    krakenUSDLive = float(kraken())
     print "#Kraken:   ", round(krakenUSDLive, 2)
-    print "=-=-=-=--=-=-=-=-=-=-"
   except:
-    print 'Error!?!?!?'
-
+    print 'Error!'
+  time.sleep(5)
 if __name__=='__main__':
   while True:
     main()
-    time.sleep(10)
+
