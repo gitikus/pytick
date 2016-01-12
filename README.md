@@ -1,1 +1,1 @@
-# pytick
+# ticker
