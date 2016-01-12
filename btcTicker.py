@@ -67,10 +67,9 @@ def main():
         print '-------------------'
     except Exception ,e:
         print '[-] ERROR = '+str(e)
-
+    time.sleep(4)
 
 
 if __name__ == '__main__':
     while True:
         main()
-        time.sleep(4)
