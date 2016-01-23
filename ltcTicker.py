@@ -1,4 +1,4 @@
-#!/usr/bin/python 2.7
+#!/usr/bin/python3
 import time ,json
 import requests
 
@@ -11,7 +11,7 @@ def huobi():
     return huobiBook.json()['p_new']
 
 def okcoinCNY():
-    okCNYlast = requests.get('https://www.okcoin.cn/api/v1/ticker.do?symbol=ltc_cny')
+    okCNYlast = requests.get('https://www.okcoin.cn/api/v1/ticker.do?symbol=ltc_cny', verify=False)
     return okCNYlast.json()['ticker']['last']
 
 def bitfinex():

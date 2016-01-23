@@ -1,4 +1,4 @@
-#!/usr/bin/python 2.7
+#!/usr/bin/python
 import time ,json
 import requests
 
@@ -14,12 +14,12 @@ def huobi():
 
 
 def okcoin_cny():
-    okCNYlast = requests.get('https://www.okcoin.cn/api/v1/ticker.do?symbol=btc_cny')
+    okCNYlast = requests.get('https://www.okcoin.cn/api/v1/ticker.do?symbol=btc_cny', verify=False)
     return okCNYlast.json()['ticker']['last']
 
 
 def okcoin_usd():
-    okcoinUSDlast = requests.get('https://www.okcoin.com/api/v1/ticker.do?symbol=btc_usd')
+    okcoinUSDlast = requests.get('https://www.okcoin.com/api/v1/ticker.do?symbol=btc_usd', verify=False)
     return okcoinUSDlast.json()['ticker']['last']
 
 
@@ -67,7 +67,7 @@ def main():
             print 'Cbase:', cbase[0][0]
             print '-------------------'
         except Exception ,e:
-            print '[-] ERROR = '+str(e)
+            print('[-] ERROR = '+str(e))
     time.sleep(5)
 
 
