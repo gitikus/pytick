@@ -2,7 +2,6 @@
 import time ,json
 import requests
 
-
 def btce_btc_usd():
     btceBtcTick = requests.get('https://btc-e.com/api/3/ticker/btc_usd')
     return btceBtcTick.json()['btc_usd']['last']
